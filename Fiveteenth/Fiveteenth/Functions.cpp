@@ -32,7 +32,7 @@ void frame()
 
 void symbols()
 {
-	int rowS = 6, rowF = 19, colS = 16, colF = 31, tempThree = 16, tempOne = 16;
+	int rowS = 6, rowF = 12, colS = 15, colF = 31, tempThree = 15, tempOne = 15;
 
 	for (short i = rowS; i <= rowF; i++)
 	{
@@ -51,6 +51,6 @@ void symbols()
 				cout << char(196);
 			}
 		}
-		tempThree = 16; tempOne = 16;
+		tempThree = tempOne = 15;
 	}
 }
