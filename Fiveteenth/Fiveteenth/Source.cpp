@@ -5,8 +5,14 @@ using namespace std;
 
 int main()
 {
-	symbols();
 	frame();
 
-	cout << endl << endl;
+	const int size = 16;
+	int arr[size] = {};
+
+	initialArr(arr, size);
+	show(arr, size);
+
+	symbols();
+	cout << "\n\n\n";
 }

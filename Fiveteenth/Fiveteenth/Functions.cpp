@@ -8,7 +8,7 @@ HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 
 void frame()
 {
-	int rowS = 4, rowF = 21, colS = 15, colF = 32;
+	int rowS = 4, rowF = 14, colS = 16, colF = 31;
 
 	for (short i = rowS; i <= rowF; i++)
 	{
@@ -32,7 +32,8 @@ void frame()
 
 void symbols()
 {
-	int rowS = 6, rowF = 12, colS = 15, colF = 31, tempThree = 15, tempOne = 15;
+	int rowS = 6, rowF = 12, colS = 16, colF = 30, tempThree, tempOne;
+	tempThree = tempOne = colS;
 
 	for (short i = rowS; i <= rowF; i++)
 	{
@@ -51,6 +52,61 @@ void symbols()
 				cout << char(196);
 			}
 		}
-		tempThree = tempOne = 15;
+		tempThree = tempOne = 16;
+	}
+}
+
+void initialArr(int arr[], int length)
+{
+	int temp = 1;
+	bool have = false;
+	srand(time(0));
+	int checkArr[16] = {};
+
+	for (int i = 0; i < length; i++)
+	{
+		checkArr[i] = arr[i] = rand() % 16;
+
+		for (int j = 0; j < temp; j++)
+		{
+			if (arr[i] == checkArr[j] && i >= 1)
+				have = true;
+		}		
+	}
+}
+
+void show(int arr[], int length)
+{
+	int turn = 0;
+	short row = 6;
+	SetConsoleCursorPosition(h, { 17, row });
+	for (int i = 0; i < length; i++)
+	{
+		if (turn % 4 == 0 && turn != 0)
+		{
+			if (arr[i] * 10 < 100 && arr[i] != 0)
+			{
+				row += 2;
+				cout << SetConsoleCursorPosition(h, { 17, row }) << 0 << arr[i] ;
+			}
+			else if (arr[i] == 0)
+				cout << "  ";
+			else
+			{
+				row += 2;
+				cout << SetConsoleCursorPosition(h, { 17, row }) << arr[i] ;
+			}
+		}
+		else
+		{
+			if (arr[i] * 10 < 100 && arr[i] != 0)
+				cout << 0 << arr[i] << "  ";
+			else if (arr[i] == 0)
+				cout << "  ";
+			else
+				cout << arr[i] << "  ";
+		}
+
+		turn++;
 	}
 }
