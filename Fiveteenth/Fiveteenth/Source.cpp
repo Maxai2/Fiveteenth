@@ -11,8 +11,9 @@ int main()
 	int arr[size] = {};
 
 	initialArr(arr, size);
-	show(arr, size);
 
 	symbols();
+	move(arr);
+
 	cout << "\n\n\n";
 }
