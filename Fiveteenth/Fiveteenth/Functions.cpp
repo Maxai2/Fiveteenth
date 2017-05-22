@@ -265,9 +265,9 @@ void move(int arr[])
 
 		if (cheker(arr, 16))
 		{
-			break;
 			show(arr, 16);
 			symbols();
+			break;
 		}
 	}
 }

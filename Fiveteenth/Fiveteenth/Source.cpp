@@ -1,7 +1,10 @@
 #include <iostream>
+#include <windows.h>
 #include "Functions.h"
 
 using namespace std;
+
+HANDLE f = GetStdHandle(STD_OUTPUT_HANDLE);
 
 int main()
 {
@@ -15,5 +18,6 @@ int main()
 	symbols();
 	move(arr);
 
-	cout << "\n\n\n";
+	SetConsoleCursorPosition(f, { 20, 15 });
+	cout << "U WIN!!!!\n";
 }
